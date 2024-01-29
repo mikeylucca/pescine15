@@ -1,42 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_div_mod.c                                       :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: misoares <misoares@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/28 16:31:57 by misoares          #+#    #+#             */
-/*   Updated: 2024/01/29 16:17:25 by misoares         ###   ########.fr       */
+/*   Created: 2024/01/29 13:34:46 by misoares          #+#    #+#             */
+/*   Updated: 2024/01/29 14:30:51 by misoares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include <unistd.h>
 
-// div = division
-// mod = module
-
-void	ft_div_mod(int a, int b, int *div, int *mod)
+void ft_putstr(char *str)
 {
-	if (b != 0) // checks if the value of b is not 0
+	int len;
+
+	len = 0;
+	while (str[len] != '\0') // while the string has not ended - uses null terminator '\0' to determine if the string has ended
 	{
-		// calculates the division and the remainder
-		*div = a / b;
-		*mod = a % b; 
+		len++; // increments 
 	}
+	write(1, str, len);
 }
 
-int	main()
+int main(void)
 {
-	int a;
-	int b;
-	int div;
-	int mod;
-
-	a = 18;
-	b = 5;
-
-	ft_div_mod(a, b, &div, &mod);
-	printf("%d\n", div);
-	printf("%d", mod);
+	ft_putstr("Teste String\n");
 	return (0);
 }

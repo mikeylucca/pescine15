@@ -1,42 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_div_mod.c                                       :+:      :+:    :+:   */
+/*   ft_ultimate_div_mod.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: misoares <misoares@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/28 16:31:57 by misoares          #+#    #+#             */
-/*   Updated: 2024/01/29 16:17:25 by misoares         ###   ########.fr       */
+/*   Created: 2024/01/28 16:52:37 by misoares          #+#    #+#             */
+/*   Updated: 2024/01/29 14:45:21 by misoares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-// div = division
-// mod = module
-
-void	ft_div_mod(int a, int b, int *div, int *mod)
+void	ft_ultimate_div_mod(int *a, int *b)
 {
-	if (b != 0) // checks if the value of b is not 0
-	{
-		// calculates the division and the remainder
-		*div = a / b;
-		*mod = a % b; 
-	}
+	int	div;
+	int	mod;
+
+	div = *a;
+	mod = *b;
+	*a = div / mod;
+	*b = div % mod;
 }
 
-int	main()
+int	main(void)
 {
-	int a;
-	int b;
-	int div;
-	int mod;
+	int	a;
+	int	b;
 
-	a = 18;
-	b = 5;
-
-	ft_div_mod(a, b, &div, &mod);
-	printf("%d\n", div);
-	printf("%d", mod);
-	return (0);
+	a = 10;
+	b = 3;
+	ft_ultimate_div_mod(&a, &b);
+	printf( "%p, %p", &a, &b);
 }
