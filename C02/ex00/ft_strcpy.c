@@ -6,16 +6,33 @@
 /*   By: misoares <misoares@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 18:06:00 by misoares          #+#    #+#             */
-/*   Updated: 2024/01/30 22:04:09 by misoares         ###   ########.fr       */
+/*   Updated: 2024/02/01 12:37:38 by misoares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strcpy(char *dest, char *src)
 {
-	while (*dest != '\0')
+	int	i;
+
+	i = 0;
+	while (src[i] != '\0')
 	{
-		*src = *dest;
-		dest++;
-		src++;
+		dest[i] = src[i];
+		i++;
 	}
+	dest[i] = '\0';
+	return (dest);
 }
+/*#include <stdio.h>
+
+int	main(void)
+{
+	char src[] = "test";
+	char dest[] = "destination";
+
+	printf("Before function\nSource = %s\nDestination = %s\n\n", src, dest);
+
+	ft_strcpy(dest, src);
+	printf("After function\nSource = %s\nDestination = %s\n", src, dest);
+
+}*/
