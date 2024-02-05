@@ -10,11 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_atoi(char *str)
+int	ft_atoi(char *str)
 {
-    int sinal;
-	int num;
-	int neg;
+	int	sinal;
+	int	num;
+	int	neg;
 
 	neg = 0;
 	sinal = 1;
@@ -22,7 +22,7 @@ int ft_atoi(char *str)
 
     // skips any leading white space characters
 	while (*str == ' ' || *str == '\t' || *str == '\n'
-	|| *str == '\v' || *str == '\f' || *str == '\r')
+		|| *str == '\v' || *str == '\f' || *str == '\r')
 		str++;
 	while (*str == '-' || *str == '+')
 	{
