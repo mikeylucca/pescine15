@@ -32,3 +32,9 @@ void	ft_putnbr(int nb)
 		ft_putnbr(number / 10); // recursively divides the number until it is a single digit
 	ft_putchar(number % 10 + 48); // adds 48 to represent the digit in its ASCII form.
 }
+
+int main (void)
+{
+	ft_putnbr(2147483647);
+	ft_putchar('\n');
+}

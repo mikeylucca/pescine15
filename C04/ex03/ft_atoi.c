@@ -14,15 +14,12 @@ int	ft_atoi(char *str)
 {
 	int	sinal;
 	int	num;
-	int	neg;
 
-	neg = 0;
 	sinal = 1;
 	num = 0;
 
     // skips any leading white space characters
-	while (*str == ' ' || *str == '\t' || *str == '\n'
-		|| *str == '\v' || *str == '\f' || *str == '\r')
+	while (*str == ' ' || (*str >= '\t' && *str <= '\r'))
 		str++;
 	while (*str == '-' || *str == '+')
 	{
@@ -38,8 +35,10 @@ int	ft_atoi(char *str)
 	return (num * sinal);
 }
 
-/*int main(void)
+#include <stdio.h>
+
+int main(void)
 {
 	char *s = "   ---+--+01234506789ab567";
-	printf("%d", ft_atoi(s));
-}*/
+	printf("%d\n", ft_atoi(s));
+}

@@ -6,7 +6,7 @@
 /*   By: misoares <misoares@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 15:35:50 by misoares          #+#    #+#             */
-/*   Updated: 2024/02/06 16:28:16 by misoares         ###   ########.fr       */
+/*   Updated: 2024/02/06 20:21:19 by misoares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ void	ft_putnbr_base(int nbr, char *base)
 	}
 }
 
-/*#include <stdio.h>
+#include <stdio.h>
 
 int	main(void)
 {
@@ -98,4 +98,4 @@ int	main(void)
 	printf("\n");
 
 	return (0);
-}*/
+}
