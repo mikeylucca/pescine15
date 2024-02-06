@@ -12,21 +12,34 @@
 
 char	*ft_strncat(char *dest, char *src, unsigned int nb)
 {
-    unsigned int i;
-    unsigned int j; // unsigned ints because the amount cannot be negative
+	unsigned int	i;
+	unsigned int	j;
 
-    i = 0;
-    j = 0;
-    while (*dest != '\0')
-    {
-        i++;
-    }
-    while (*src != '\0' && nb > 0) // while src has not terminated and there is still space left
-    {
-        *dest = *src; // copies the current caracter
-        dest++; // goes to the next position on dest
-        src++; // goes to the next character
-        nb--; // reduces remaining size by 1
-    }
-    *dest = '\0';
+	i = 0;
+	while (dest[i])
+	{
+		i++;
+	}
+	j = 0;
+	while (src[j] != '\0' && j < nb)
+	{
+		dest[i] = src[j];
+		i++;
+		j++;
+	}
+	dest[i] = '\0';
+	return (dest);
+}
+
+
+#include<stdio.h>
+#include<string.h>
+int	main(void)
+{
+	char dest[50] = "I love: ";
+	char src[] = "C (i dont)";
+	unsigned int	n = 19;
+	
+	printf("%s\n", ft_strncat(dest, src, n));
+	return (0);
 }

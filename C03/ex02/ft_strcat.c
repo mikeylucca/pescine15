@@ -10,18 +10,34 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-char *ft_strcat(char *dest, char *src)
+char	*ft_strcat(char *dest, char *src)
 {
-    // Move dest pointer to the end of the string
-    while (*dest != '\0') {
-        dest++;
-    }
-    // Copy characters from src to dest
-    while (*src != '\0') {
-        *dest = *src;
-        dest++;
-        src++;
-    }
-    // Terminate the concatenated string
-    *dest = '\0';
+	int	i;
+	int	j;
+
+	i = 0;
+	while (dest[i] != '\0')
+	{
+		i++;
+	}
+	j = 0;
+	while (src[j] != '\0')
+	{
+		dest[i] = src[j];
+		i++;
+		j++;
+	}
+	dest[i] = '\0';
+	return (dest);
+}
+
+#include<stdio.h>
+
+int	main(void)
+{
+	char dest[12] = "Hello ";
+	char *src = "world!";
+
+	printf("%s", ft_strcat(dest, src));
+	return (0);
 }

@@ -10,16 +10,29 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strncmp(char *s1, char *s2, unsigned int n)
+int	ft_strncmp(char *s1, char *s2, unsigned int n)
 {
-	while (n && *s1 && (*s1 == *s2))
+	unsigned int	i;
+
+	i = 0;
+	while ((s1[i] || s2[i]) && (i < n))
 	{
-		s1++;
-		s2++;
-		n++;
+		if (s1[i] != s2[i])
+		{
+			return (s1[i] - s2[i]);
+		}
+		i++;
 	}
-	if (n == 0)
-		return (0);
-	else
-		return (*s1) - (*s2);
+	return (0);
+}
+
+#include<stdio.h>
+int	main(void)
+{
+	unsigned int	n = 4;
+	char s1[] = "";
+	char s2[] = "foo3";
+
+	printf("%d\n", ft_strncmp(s1, s2, n));
+	return (0);
 }

@@ -10,30 +10,34 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-char *ft_strstr(char *str, char *to_find)
+char	*ft_strstr(char *str, char *to_find)
 {
-    if (*to_find == '\0')
-    {
-        return (str);
-    }
-    while (*str != '\0') // while the string has not ended
-    {
-        char *strPtr = str;
-        char *toFindPtr = to_find;
+	int	i;
+	int	j;
 
-        // check if the current character == 1st char in to_find
-        while (*toFindPtr != '\0' && *strPtr == *toFindPtr)
-        {
-            strPtr++;
-            toFindPtr++;
-        }
+	j = 0;
+	i = 0;
+	if (to_find[j] == '\0')
+		return (str);
+	while (str[i] != '\0')
+	{
+		while (str[i + j] == to_find[j] && str[i + j] != '\0')
+			j++;
+		if (to_find[j] == '\0')
+			return (str + i);
+		i++;
+		j = 0;
+	}
+	return (0);
+}
 
-        // if the whole tofind str is in str, returns the position
-        if (*toFindPtr == '\0')
-        {
-            return (str);
-        }
-        str++; // moves to the next char in str
-    }
-    return (0); // returns 0 if nothing is found.
+
+#include<stdio.h>
+int	main(void)
+{
+	char *str = "manomeudeusdoceuquecodigoloucopqntavafuncionando";
+	char *find = "codigo";
+
+	printf("%s\n", ft_strstr(str, find));
+	return (0);
 }

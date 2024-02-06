@@ -22,25 +22,34 @@ int ft_strlen(char *str)
     return (len);
 }
 
-unsigned int ft_strlcat(char *dest, char *src, unsigned int size)
+unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 {
-    unsigned int i;
-    unsigned int j;
+	unsigned int	i;
+	unsigned int	j;
 
-    i = 0;
-    j = 0;
-    while(dest[i] && i < size) // Find the end of dest or stop at size limit
-    {
-        i++;
-    }
-    while(src[i - j] && i + 1 < size)  // Copy characters from src to dest, accounting for the null terminator
-    {
-        dest[i] = src[i - j];
-        i++;
-    }
-    if (j < size)
-    {
-        dest[i] = '\0'; // makes sure the new string is terminated
-    }
-    return (j + ft_strlen(src)); // returns total size of concatenated string
+	i = ft_strlen(dest);
+	if (size <= i)
+	{
+		return (size + ft_strlen(src));
+	}
+	j = 0;
+	while (src[j] && size > i + 1)
+	{
+		dest[i] = src[j];
+		i++;
+		j++;
+	}
+	dest[i] = '\0';
+	return (ft_strlen(dest) + ft_strlen(&src[j]));
+}
+
+#include<stdio.h>
+int	main(void)
+{
+	char dest[60] = "socorro_";
+	char src[] = "me_ajude!";
+	unsigned int	n = 21;
+
+	printf("%u\n", ft_strlcat(dest, src, n));
+	return (0);
 }
