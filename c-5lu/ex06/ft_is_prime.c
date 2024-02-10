@@ -6,7 +6,7 @@
 /*   By: misoares <misoares@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 17:44:50 by lualbuqu          #+#    #+#             */
-/*   Updated: 2024/02/01 15:18:26 by misoares         ###   ########.fr       */
+/*   Updated: 2024/02/06 21:45:33 by misoares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	ft_is_prime(int nb)
 		return (0);
 	while (prime_num <= (nb / 2))
 	{
-		if (!(nb % prime_num))
+		if (!(nb % prime_num == 0))
 			return (0);
 		else
 			prime_num++;
@@ -29,7 +29,7 @@ int	ft_is_prime(int nb)
 	return (1);
 }
 
-int main (void)
+/* int main (void)
 {
 	printf("%d -> %d\n", -3965, ft_is_prime(-3965));
 	printf("%d -> %d\n", -12, ft_is_prime(-12));
@@ -1946,3 +1946,4 @@ int main (void)
 	return (0);
 }
 
+ */

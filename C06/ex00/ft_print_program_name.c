@@ -1,29 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_prime.c                                      :+:      :+:    :+:   */
+/*   ft_print_program_name.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: misoares <misoares@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/08 14:21:38 by misoares          #+#    #+#             */
-/*   Updated: 2024/02/08 14:27:49 by misoares         ###   ########.fr       */
+/*   Created: 2024/02/09 21:31:49 by misoares          #+#    #+#             */
+/*   Updated: 2024/02/09 21:49:06 by misoares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_is_prime(int nb)
-{
-	int	prime;
+#include <unistd.h>
 
-	prime = 2;
-	if (nb <= 1)
-		return (0);
-	while (prime <= (nb / 2))
-	{
-		if (!(nb % prime == 0))
-			return (0);
-		else
-			prime++;
-	}
-	return (1);
+int ft_strlen(char *str)
+{
+    int len;
+
+    len = 0;
+    while (str[len] != '\0')
+    {
+        len++;
+    }
+    return (len);
 }
 
+int main(int argc, char *argv[])
+{
+    int i;
+
+    i = 0;
+    if (argc > 0)
+    {
+        write(1, argv[0], ft_strlen(argv[0]));
+        write(1, "\n", 1);
+    }
+}

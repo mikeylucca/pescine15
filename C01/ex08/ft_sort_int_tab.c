@@ -6,7 +6,7 @@
 /*   By: misoares <misoares@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 16:08:37 by misoares          #+#    #+#             */
-/*   Updated: 2024/01/29 16:50:11 by misoares         ###   ########.fr       */
+/*   Updated: 2024/02/10 17:23:29 by misoares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ft_sort_int_tab(int *tab, int size)
 	while (size >= 0)
 	{
 		i = 0;
-		while (i < size - 1) // iterates through the array and makes sure that no out of bounds accesses are done when comparing the elements
+		while (i < size - 1) 
 		{
 			if (tab[i] > tab[i + 1]) // if the current value is greater than the next value
 			{
@@ -26,9 +26,9 @@ void	ft_sort_int_tab(int *tab, int size)
 				tab[i] = tab[i + 1];
 				tab[i + 1] = temp; // swaps them
 			}
-			i++; // increments i
+			i++;
 		}
-		size--; // decrements size by 1 
+		size--;
 	}
 }
 
