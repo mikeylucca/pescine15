@@ -6,7 +6,7 @@
 /*   By: misoares <misoares@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/10 21:36:48 by misoares          #+#    #+#             */
-/*   Updated: 2024/02/10 22:17:18 by misoares         ###   ########.fr       */
+/*   Updated: 2024/02/11 16:28:33 by misoares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int	main(void)
 
 	i = 0;
 	min = 5;
-	max = 1000000000;
+	max = 10;
 	size = max - min;
 	tab = ft_range(min, max);
 	while (i < size)
