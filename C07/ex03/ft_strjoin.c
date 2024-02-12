@@ -6,47 +6,90 @@
 /*   By: misoares <misoares@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/11 20:36:46 by misoares          #+#    #+#             */
-/*   Updated: 2024/02/11 21:54:10 by misoares         ###   ########.fr       */
+/*   Updated: 2024/02/12 20:35:10 by misoares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include <stdio.h>
 
-int ft_strlen(char *str)
+int ft_strlen(const char *str)
 {
 	int i;
 
 	i = 0;
-	while (str[i] = '\0')
+	while (str[i] != '\0')
 	{
 		i++;
 	}
 	return (i);
 }
 
-// create another function that will iterate through each string then call for strlen to count the size of each one.
-
-char *ft_strjoin(const char *s1, const char *s2)
+char	*ft_strcat(char *dest, char *src)
 {
-	char *buffer;
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	i = 0;
 	j = 0;
-	*buffer = malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2)) + 1);
-	if (!*buffer)
-		return (NULL);
-	while (s1[i])
+	while (dest[i])
+		i++;
+	while (src[j])
 	{
-		buffer[j++] = s1[i++];
+		dest[i + j] = src[j];
+		j++;
 	}
-	i = 0;
-	while (s2[i])
-	{
-		buffer[j++] = s2[i];
-	}
-	buffer[j] = 0;
+	dest[i + j] = 0;
+	return (dest);
+}
 
-	return (buffer);
+int ft_len(char **strs, int size, char *sep) // loops through each string in the strs array.
+{
+	int i;
+	int len;
+
+	i = 0;
+	len = - 1;
+	while (++i < size)
+		len += ft_strlen(strs[i]); // calculates the length
+	len = len + (size - 1) * ft_strlen(sep) + 1; // calculates the total amount of strni
+	return (len);
+}
+
+char *ft_strjoin(int size, char **strs, char *sep)
+{
+    int i;
+    char *str;
+
+    if (size == 0)
+    {
+        str = malloc(sizeof(char));
+        *str = 0;
+        return (str);
+    }
+    if (!(str = malloc(sizeof(char) * ft_len(strs, size, sep) + 1)))
+        return (NULL);
+    *str = 0;
+    i = 0;
+    while (i < size)
+    {
+        ft_strcat(str, strs[i]);
+        if (i < size - 1)
+        {
+            ft_strcat(str, sep);
+        }
+        i++;
+    }
+    return (str);
+}
+
+int main(int argc, char *argv[])
+{
+	char *separator = " ";
+	char *joined_string = ft_strjoin((argc - 1), &argv[1], separator);
+
+	printf("Concatenated string: %s\n", joined_string);
+	
+	free(joined_string);
+	return (0);
 }
