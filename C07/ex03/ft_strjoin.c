@@ -6,7 +6,7 @@
 /*   By: misoares <misoares@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/11 20:36:46 by misoares          #+#    #+#             */
-/*   Updated: 2024/02/12 20:35:10 by misoares         ###   ########.fr       */
+/*   Updated: 2024/02/12 21:16:49 by misoares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ int ft_len(char **strs, int size, char *sep) // loops through each string in the
 	len = - 1;
 	while (++i < size)
 		len += ft_strlen(strs[i]); // calculates the length
-	len = len + (size - 1) * ft_strlen(sep) + 1; // calculates the total amount of strni
+	len = len + (size - 1) * ft_strlen(sep) + 1; // calculates the total amount of strs
 	return (len);
 }
 
